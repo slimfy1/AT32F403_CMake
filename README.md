@@ -1,5 +1,5 @@
 # **Artery AT32F403 Cmake Template**
-![](D:\trash\Screenshot 2025-01-06 212105.png)
+![Artery](D:\trash\Screenshot 2025-01-06 212105.png)
 
 ## Project information
 
