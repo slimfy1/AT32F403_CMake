@@ -14,6 +14,29 @@ Replace "path\to\folder" to your path. For example:
 
 `Windows: cmake --build D:\MCU_Tests\AT32Test\AT32F403ACGU7_Cmake\cmake-build-debug --target AT32F403ACGU7_Cmake.elf -j 18`
 
+## Change MCU
+
+To change MCU you need to change linker file (*.ld ) in root of project
+
+Latest linker files store in _{$PROJECT_ROOT}/middlewares/libraries/cmsis/cm4/device_support/startup/gcc/linker_
+
+After changing linking file you need to edit _CMakeLists.txt_
+
+Example:
+
+Lets change to AT32F403AxC MCU
+
+`set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/AT32F403AxG_FLASH.ld)` change to `set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/AT32F403AxC_FLASH.ld)`
+
+Your CMakeLists.txt must look like this after editing:
+
+`set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/AT32F403AxC_FLASH.ld)`
+
+## Middlewares
+
+All middlewares store in _{$PROJECT_ROOT}/middlewares/_
+
+If you need this middlewares in your project you need to include them in CMakeList.txt in _include_directories_ section
 ## License
 
 BSD 3-Clause License
