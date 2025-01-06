@@ -1,6 +1,6 @@
 # **Artery AT32F403 Cmake Template**
-![Artery](D:\trash\Screenshot 2025-01-06 212105.png)
-
+![](img/artery.png )
+<img src="img/cmake.png" width="65" />
 ## Project information
 
 **AT32 Firmware version: 2.2.0 (latest on 06.01.2024)**
