@@ -46,7 +46,12 @@ include_directories(
 add_definitions(-DDEBUG -DAT_START_F403A_V1 -DAT32F403ACGU7 -DUSE_STDPERIPH_DRIVER -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DTRACE)
 
 # Set global sources
-file(GLOB_RECURSE SOURCES "src/*.*" "Drivers/*.*")
+file(GLOB_RECURSE SOURCES
+        "src/*.*"
+        "Drivers/*.*")
+# Add libraries
+file(GLOB_RECURSE LIB_SOURCES "Libraries/MyLib/*.c")
+include_directories(Libraries/MyLib)
 
 # Set linker script
 set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/AT32F403AxG_FLASH.ld)
@@ -62,7 +67,7 @@ add_link_options(
 )
 
 # Set exe file
-add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LINKER_SCRIPT})
+add_executable(${PROJECT_NAME}.elf ${SOURCES} ${LIB_SOURCES} ${LINKER_SCRIPT})
 
 # Path to HEX and BIN
 set(HEX_FILE ${PROJECT_BINARY_DIR}/${PROJECT_NAME}.hex)
