@@ -40,6 +40,7 @@ include_directories(
         Drivers/cmsis/cm4/core_support
         Drivers/cmsis/cm4/device_support
         Drivers/drivers/inc
+        Library/GPIO
 )
 
 # Project macros and defines
@@ -50,7 +51,9 @@ file(GLOB_RECURSE SOURCES
         "src/*.*"
         "Drivers/*.*")
 # Add libraries
-file(GLOB_RECURSE LIB_SOURCES "Libraries/MyLib/*.c")
+file(GLOB_RECURSE LIB_SOURCES
+        "Library/GPIO/*.c"
+)
 include_directories(Libraries/MyLib)
 
 # Set linker script

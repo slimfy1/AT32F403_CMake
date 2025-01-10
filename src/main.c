@@ -28,7 +28,7 @@
 #include "at32f403a_407_wk_config.h"
 #include "wk_gpio.h"
 #include "wk_system.h"
-
+#include "gpio.h"
 /* private includes ----------------------------------------------------------*/
 /* add user code begin private includes */
 
@@ -97,10 +97,7 @@ int main(void)
   while(1)
   {
     /* add user code begin 3 */
-    gpio_bits_write(LED_GPIO_PORT, LED_PIN, TRUE);
-    wk_delay_ms(500);
-    gpio_bits_write(LED_GPIO_PORT, LED_PIN, FALSE);
-    wk_delay_ms(500);
+	blink_led_at32();
     /* add user code end 3 */
   }
 }
